@@ -77,6 +77,13 @@ public interface IUserService {
      * @return
      */
     ServerResponse<User> getUserInformation(Integer userId);
+
+    /**
+     * 校验用户是否为管理员
+     * @param user
+     * @return
+     */
+    ServerResponse<String> validateUserRole(User user);
 }
 
 

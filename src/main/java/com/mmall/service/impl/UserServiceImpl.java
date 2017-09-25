@@ -187,4 +187,12 @@ public class UserServiceImpl implements IUserService {
         }
         return ServerResponse.createErrorByErrorMessage("获取用户信息失败");
     }
+
+    @Override
+    public ServerResponse<String> validateUserRole(User user) {
+        if (user.getRole().intValue() == Const.Role.ROLE_ADMIN) {
+            return ServerResponse.createBySuccess();
+        }
+        return ServerResponse.createError();
+    }
 }

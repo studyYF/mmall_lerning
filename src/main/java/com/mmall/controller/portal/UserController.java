@@ -24,10 +24,10 @@ public class UserController {
     private IUserService iUserService;
     /**
      * 用户登录
-     * @param username
-     * @param password
-     * @param session
-     * @return
+     * @param username 用户名
+     * @param password 密码
+     * @param session session
+     * @return 是否登录成功
      */
     @RequestMapping(value = "login.do", method = RequestMethod.POST)//表示截取的login.do的请求,并且请求方法是post
     @ResponseBody//返回的时候自动使用SpringMVC的插件jackson 把结果序列化成json
@@ -42,7 +42,7 @@ public class UserController {
 
     /**
      * 退出登录
-     * @return
+     * @return 退出登录是否成功
      */
     @RequestMapping(value = "logout.do", method = RequestMethod.POST)
     @ResponseBody
@@ -53,8 +53,8 @@ public class UserController {
 
     /**
      * 注册
-     * @param user
-     * @return
+     * @param user user对象
+     * @return 是否注册成功
      */
     @RequestMapping(value = "register.do", method = RequestMethod.POST)
     @ResponseBody
@@ -65,9 +65,9 @@ public class UserController {
 
     /**
      * 校验用户名和email是否可用
-     * @param str
-     * @param type
-     * @return
+     * @param str 用户名活密码
+     * @param type 判断是用户名还是密码
+     * @return 返回是否可用
      */
     @RequestMapping(value = "check_valid.do", method = RequestMethod.POST)
     @ResponseBody
@@ -77,8 +77,8 @@ public class UserController {
 
     /**
      * 获取用户信息
-     * @param session
-     * @return
+     * @param session session
+     * @return 用户对象
      */
     @RequestMapping(value = "get_user_info.do", method = RequestMethod.POST)
     @ResponseBody
@@ -92,8 +92,8 @@ public class UserController {
 
     /**
      * 获取用户的密保问题
-     * @param username
-     * @return
+     * @param username 用户名
+     * @return 密保问题 和token
      */
     @RequestMapping(value = "forget_get_question.do", method = RequestMethod.POST)
     @ResponseBody
@@ -103,10 +103,10 @@ public class UserController {
 
     /**
      * 验证用户密保答案是否正确
-     * @param username
-     * @param question
-     * @param answer
-     * @return
+     * @param username 用户名
+     * @param question 问题
+     * @param answer 答案
+     * @return 是否正确
      */
     @RequestMapping(value = "forget_check_answer.do", method = RequestMethod.POST)
     @ResponseBody
@@ -116,10 +116,10 @@ public class UserController {
 
     /**
      * 忘记密码重置密码
-     * @param username
-     * @param passwordNew
-     * @param token
-     * @return
+     * @param username 用户名
+     * @param passwordNew 新密码
+     * @param token token重置密码的token
+     * @return 重置密码是否成功
      */
     @RequestMapping(value = "forget_reset_password.do", method = RequestMethod.POST)
     @ResponseBody
@@ -129,10 +129,10 @@ public class UserController {
 
     /**
      * 登录状态下的重置密码
-     * @param session
-     * @param passwordOld
-     * @param passwordNew
-     * @return
+     * @param session session
+     * @param passwordOld 旧密码
+     * @param passwordNew 新密码
+     * @return 重置密码是否成功
      */
     @RequestMapping(value = "reset_password.do", method = RequestMethod.POST)
     @ResponseBody
@@ -146,9 +146,9 @@ public class UserController {
 
     /**
      * 更新用户信息
-     * @param session
-     * @param user
-     * @return
+     * @param session session
+     * @param user 用户对象
+     * @return 新的用户对象
      */
     @RequestMapping(value = "update_information.do", method = RequestMethod.POST)
     @ResponseBody
@@ -169,8 +169,8 @@ public class UserController {
 
     /**
      * 获取用户信息
-     * @param session
-     * @return
+     * @param session session
+     * @return 用户对象
      */
     @RequestMapping(value = "get_information.do", method = RequestMethod.POST)
     @ResponseBody
