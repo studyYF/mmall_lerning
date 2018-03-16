@@ -99,7 +99,6 @@ public class CategoryServiceImpl implements ICategoryService {
         for (Category categoryItem: categorySet) {
             list.add(categoryItem.getId());
         }
-
         return ServerResponse.createBySuccess(list);
     }
 
